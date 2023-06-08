@@ -14,14 +14,14 @@ from sklearn.metrics import roc_curve
 from sklearn.metrics import RocCurveDisplay
 
 IDENTIFIER = f'antifraud-{os.environ.get("KCHECKER_USER_USERNAME", "default")}'
-print(IDENTIFIER)
-print('Test space')
-x = input()
-print(x)
+# print(IDENTIFIER)
+# print('Test space')
+# x = input()
+# print(x)
 TRACKING_URI = os.environ.get("TRACKING_URI")
 
 
-def recall_at_precision(
+def recall_at_precision( #
     true_labels: np.ndarray,
     pred_scores: np.ndarray,
     min_precision: float = 0.95,
@@ -42,7 +42,7 @@ def recall_at_precision(
     return metric
 
 
-def recall_at_specificity(
+def recall_at_specificity( #
     true_labels: np.ndarray,
     pred_scores: np.ndarray,
     min_specificity: float = 0.95,
@@ -63,7 +63,7 @@ def recall_at_specificity(
     return metric
 
 
-def curves(true_labels: np.ndarray, pred_scores: np.ndarray) -> Tuple[np.ndarray]:
+def curves(true_labels: np.ndarray, pred_scores: np.ndarray) -> Tuple[np.ndarray]: #
     """Return ROC and FPR curves
 
     Args:
